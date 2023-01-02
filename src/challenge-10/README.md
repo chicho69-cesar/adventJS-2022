@@ -27,7 +27,7 @@ Es `false`.
 Va de abajo a arriba, de arriba a abajo y luego sube otra vez.
   7   5 
  ↗ ↘ ↗
-1   3
+1   3*/
 ```
 Necesitamos que el programa devuelva un ``boolean`` que indique si el trineo hace una parabola o no.
 
