@@ -24,13 +24,13 @@ countHours(year, holidays) // 2 días -> 4 horas extra en el año
 Cosas a tener en cuenta y consejos:
 
 <ul>
-    <li style="color:yellow;">
-        El año puede ser bisiesto. Haz las comprobaciones que necesitas para ello, si fuese necesario.
-    </li>
-    <li style="color:yellow;">
-        Aunque el 31 de diciembre sea festivo, las horas extra se harán el mismo año y no el siguiente.
-    </li>
-    <li style="color:yellow;">
-        El método Date.getDay() te devuelve el día de la semana de una fecha. El 0 es domingo, el 1 es lunes, etc.
-    </li>
+  <li style="color:yellow;">
+    El año puede ser bisiesto. Haz las comprobaciones que necesitas para ello, si fuese necesario.
+  </li>
+  <li style="color:yellow;">
+    Aunque el 31 de diciembre sea festivo, las horas extra se harán el mismo año y no el siguiente.
+  </li>
+  <li style="color:yellow;">
+    El método Date.getDay() te devuelve el día de la semana de una fecha. El 0 es domingo, el 1 es lunes, etc.
+  </li>
 </ul>
