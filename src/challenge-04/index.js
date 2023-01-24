@@ -6,4 +6,10 @@ function fitsInOneBox(boxes) {
   })
 }
 
+function fitsInOneBoxAlt1(boxes) {
+  return boxes
+    .sort((a, b) => b.l - a.l)
+    .every((item, index) => !boxes[index + 1] ? true : item.l > boxes[index + 1].l && item.w > boxes[index + 1].w && item.h > boxes[index + 1].h)
+}
+
 module.exports = fitsInOneBox
