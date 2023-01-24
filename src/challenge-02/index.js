@@ -11,4 +11,17 @@ function countHours(year, holidays) {
   return hours
 }
 
+function countHoursAlt1(year, holidays) {
+  return holidays.map(holiday => {
+    let date = new Date(`${ year }/${ holiday }`)
+    return [ 1, 2, 3, 4, 5 ].includes(date.getDay())
+  }).reduce((count, extraHour) => count + extraHour) * 2
+}
+
+function countHoursALt2(year, holidays) {
+  return holidays
+    .filter(diaMes => new Date(diaMes + "/" + year).getDay() % 6)
+    .length * 2
+}
+
 module.exports = countHours
