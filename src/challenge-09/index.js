@@ -9,4 +9,10 @@ function countTime(leds) {
   return sorteredArray[0].length * 7
 }
 
+function countTimeAlt(leds) {
+  let arr = leds.join("").split("1")
+  arr[0] += arr.pop()
+  return Math.max(...arr.map((led) => led.length)) * 7
+}
+
 module.exports = countTime
