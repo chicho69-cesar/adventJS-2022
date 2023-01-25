@@ -35,4 +35,33 @@ function howManyReindeers(reindeerTypes, gifts) {
   return reindeersFiltered
 }
 
+function howManyReindeersAlt(reindeerTypes, gifts) {
+  reindeerTypes.sort((a, b) => a.weightCapacity - b.weightCapacity)
+
+  const traverse = (reindeers, weight) => {
+    reindeerTypes.forEach(({ weightCapacity }, i) => {
+      if (weight - weightCapacity >= 0) {
+        reindeers[i].num += 1
+        weight -= weightCapacity
+      }
+    })
+    return weight > 0
+      ? traverse(reindeers, weight)
+      : reindeers
+  }
+
+  return gifts.map(({ country, weight }) => {
+    const result = traverse(reindeerTypes.map(({ type }) => {
+      return {
+        type: type,
+        num: 0
+      }
+    }), weight)
+    return {
+      country: country,
+      reindeers: result.reverse().filter(({ num }) => !!num)
+    }
+  })
+}
+
 module.exports = howManyReindeers
